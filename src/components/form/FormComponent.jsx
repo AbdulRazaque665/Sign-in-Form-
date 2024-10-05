@@ -2,40 +2,40 @@ import React, { useEffect, useState } from 'react'
 import "./form.css"
 
 const Form = () => {
-    const [userDetails, setUserDetails] = useState({firstName:"",lastName:"",email:"",password:"",confirmPassword:""})
-    const [userError, setUserErr] = useState({fNameErr:false,lNameErr:false,emailErr:false,passErr:false,confirmPassErr:false})
-    const {firstName,lastName,email,password,confirmPassword} = userDetails
-    const {fNameErr,lNameErr,emailErr,passErr,confirmPassErr} = userError
+    const [formValues, setformValues] = useState({firstName:"",lastName:"",email:"",password:"",confirmPassword:""})
+    const [formErrors, SetFormErrors] = useState({fNameErr:false,lNameErr:false,emailErr:false,passErr:false,confirmPassErr:false})
+    const {firstName,lastName,email,password,confirmPassword} = formValues
+    const {fNameErr,lNameErr,emailErr,passErr,confirmPassErr} = formErrors
 
     const signInHandler = (e)=> {
         e.preventDefault()
         if(firstName === ""){
-            setUserErr({...userError,fNameErr:true})
+            SetFormErrors({...formErrors,fNameErr:true})
         } else if(lastName === ""){
-            setUserErr({...userError,lNameErr:true})
+            SetFormErrors({...formErrors,lNameErr:true})
         } else if(email === ""){
-            setUserErr({...userError,emailErr:true})
+            SetFormErrors({...formErrors,emailErr:true})
         } else if(password === ""){
-            setUserErr({...userError,passErr:true})
+            SetFormErrors({...formErrors,passErr:true})
         }else if(confirmPassword === ""){
-            setUserErr({...userError,confirmPassErr:true})
+            SetFormErrors({...formErrors,confirmPassErr:true})
         }
     }
     useEffect(()=>{
         if(firstName !== ""){
-            setUserErr({...userError,fNameErr:false})
+            SetFormErrors({...formErrors,fNameErr:false})
         }
         if(lastName !== ""){
-            setUserErr({...userError,lNameErr:false})
+            SetFormErrors({...formErrors,lNameErr:false})
         }
         if(email !== ""){
-            setUserErr({...userError,emailErr:false})
+            SetFormErrors({...formErrors,emailErr:false})
         }
         if(password !== ""){
-            setUserErr({...userError,passErr:false})
+            SetFormErrors({...formErrors,passErr:false})
         }
         if(confirmPassword !== ""){
-            setUserErr({...userError,confirmPassErr:false})
+            SetFormErrors({...formErrors,confirmPassErr:false})
         }
 
         
@@ -49,30 +49,30 @@ const Form = () => {
     <h1 class="h3 mb-3 fw-normal">Sign in</h1>
 
     <div class="form-floating mb-3">
-      <input style={{border: fNameErr && "3px solid red"}} type="text" class="form-control " id="floatingInput" placeholder="First Name" onChange={(e)=>{setUserDetails({...userDetails,firstName: e.target.value})}}/>
+      <input style={{border: fNameErr && "3px solid red"}} type="text" class="form-control " id="floatingInput" placeholder="First Name" onChange={(e)=>{setformValues({...formValues,firstName: e.target.value})}}/>
       <label for="floatingInput">First Name</label>
       {fNameErr && (<span className='text-danger mt-0'>Enter First Name</span>)}
     </div>
 
     <div class="form-floating mb-3">
-      <input style={{border: lNameErr && "3px solid red"}} type="text" class="form-control " id="floatingInput" placeholder="Last Name" onChange={(e)=>{setUserDetails({...userDetails,lastName: e.target.value})}}/>
+      <input style={{border: lNameErr && "3px solid red"}} type="text" class="form-control " id="floatingInput" placeholder="Last Name" onChange={(e)=>{setformValues({...formValues,lastName: e.target.value})}}/>
       <label for="floatingInput">Last Name</label>
       {lNameErr && (<span className='text-danger mt-0'>Enter Last Name</span>)}
     </div>
 
     <div class="form-floating mb-3">
-      <input style={{border: emailErr && "3px solid red"}} type="email" class="form-control " id="floatingInput" placeholder="name@example.com" onChange={(e)=>{setUserDetails({...userDetails,email: e.target.value})}}/>
+      <input style={{border: emailErr && "3px solid red"}} type="email" class="form-control " id="floatingInput" placeholder="name@example.com" onChange={(e)=>{setformValues({...formValues,email: e.target.value})}}/>
       <label for="floatingInput">Email address</label>
       {emailErr && (<span className='text-danger mt-0'>Enter Email</span>)}
     </div>
 
     <div class="form-floating mb-3">
-      <input style={{border: passErr && "3px solid red"}} type="password" class="form-control " id="floatingInput" placeholder="Password" onChange={(e)=>{setUserDetails({...userDetails,password: e.target.value})}}/>
+      <input style={{border: passErr && "3px solid red"}} type="password" class="form-control " id="floatingInput" placeholder="Password" onChange={(e)=>{setformValues({...formValues,password: e.target.value})}}/>
       <label for="floatingInput">Password</label>
       {passErr && (<span className='text-danger mt-0'>Enter Password</span>)}
     </div>
     <div class="form-floating">
-      <input style={{border: confirmPassErr && "3px solid red"}} type="password" class="form-control" id="floatingPassword" placeholder="Confirm Password" onChange={(e)=>{setUserDetails({...userDetails,confirmPassword: e.target.value})}}/>
+      <input style={{border: confirmPassErr && "3px solid red"}} type="password" class="form-control" id="floatingPassword" placeholder="Confirm Password" onChange={(e)=>{setformValues({...formValues,confirmPassword: e.target.value})}}/>
       <label for="floatingPassword">Confirm Password</label>
      {confirmPassErr && (<span className='text-danger mt-0'>Enter Confirm Password</span>)}
     </div>
