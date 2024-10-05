@@ -49,30 +49,30 @@ const Form = () => {
     <h1 class="h3 mb-3 fw-normal">Sign in</h1>
 
     <div class="form-floating mb-3">
-      <input style={{border: fNameErr && "3px solid red"}} type="text" class="form-control " id="floatingInput" placeholder="First Name" onChange={(e)=>{setformValues({...formValues,firstName: e.target.value})}}/>
+      <input style={{border: fNameErr && "3px solid red"}} type="text" class="form-control focus-ring focus-ring-light" id="floatingInput" placeholder="First Name" onChange={(e)=>{setformValues({...formValues,firstName: e.target.value})}}/>
       <label for="floatingInput">First Name</label>
       {fNameErr && (<span className='text-danger mt-0'>Enter First Name</span>)}
     </div>
 
     <div class="form-floating mb-3">
-      <input style={{border: lNameErr && "3px solid red"}} type="text" class="form-control " id="floatingInput" placeholder="Last Name" onChange={(e)=>{setformValues({...formValues,lastName: e.target.value})}}/>
+      <input style={{border: lNameErr && "3px solid red"}} type="text" class="form-control focus-ring focus-ring-light" id="floatingInput" placeholder="Last Name" onChange={(e)=>{setformValues({...formValues,lastName: e.target.value})}}/>
       <label for="floatingInput">Last Name</label>
       {lNameErr && (<span className='text-danger mt-0'>Enter Last Name</span>)}
     </div>
 
     <div class="form-floating mb-3">
-      <input style={{border: emailErr && "3px solid red"}} type="email" class="form-control " id="floatingInput" placeholder="name@example.com" onChange={(e)=>{setformValues({...formValues,email: e.target.value})}}/>
+      <input style={{border: emailErr && "3px solid red"}} type="email" class="form-control focus-ring focus-ring-light" id="floatingInput" placeholder="name@example.com" onChange={(e)=>{setformValues({...formValues,email: e.target.value})}}/>
       <label for="floatingInput">Email address</label>
       {emailErr && (<span className='text-danger mt-0'>Enter Email</span>)}
     </div>
 
     <div class="form-floating mb-3">
-      <input style={{border: passErr && "3px solid red"}} type="password" class="form-control " id="floatingInput" placeholder="Password" onChange={(e)=>{setformValues({...formValues,password: e.target.value})}}/>
+      <input style={{border: passErr && "3px solid red"}} type="password" class="form-control focus-ring focus-ring-light" id="floatingInput" placeholder="Password" onChange={(e)=>{setformValues({...formValues,password: e.target.value})}}/>
       <label for="floatingInput">Password</label>
       {passErr && (<span className='text-danger mt-0'>Enter Password</span>)}
     </div>
     <div class="form-floating">
-      <input style={{border: confirmPassErr && "3px solid red"}} type="password" class="form-control" id="floatingPassword" placeholder="Confirm Password" onChange={(e)=>{setformValues({...formValues,confirmPassword: e.target.value})}}/>
+      <input style={{border: confirmPassErr && "3px solid red"}} type="password" class="form-control focus-ring focus-ring-lightgi" id="floatingPassword" placeholder="Confirm Password" onChange={(e)=>{setformValues({...formValues,confirmPassword: e.target.value})}}/>
       <label for="floatingPassword">Confirm Password</label>
      {confirmPassErr && (<span className='text-danger mt-0'>Enter Confirm Password</span>)}
     </div>
